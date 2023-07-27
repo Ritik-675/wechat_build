@@ -1,0 +1,27 @@
+.sidebarOption{
+    display: flex;
+    /* justify-content: left; */
+    align-items: center;
+    font-size: 12px;
+    padding-left: 2px;
+    cursor: pointer;
+}
+
+.sidebarOption:hover{
+    background-color: var(--hoverBackground);
+    opacity: 0.9;
+}
+
+.sidebarOption__icon{
+    padding: 10px;
+    font-size: 15px !important;
+}
+
+.sidebarOptionChannel{
+    padding: 10px 0;
+}
+.sidebarOptionHash{
+    padding: 10px;
+    padding-right: 18px;
+    font-size: 15px !important;
+}

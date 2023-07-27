@@ -24,7 +24,7 @@
     background-color: var(--searchBackcolor);
     text-align: center;
     display: flex;
-    padding: 0px 30px;
+    padding: 3px 30px;
     border-radius: 4px;
 }
 .header__search>input{
@@ -36,9 +36,10 @@
 
 .header__right{
     flex: 0.3;
-     display: flex;
-     align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 }
+
 
 .header__right>.MuiSvgIcon-root{
     margin-left: auto;
