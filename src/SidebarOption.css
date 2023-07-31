@@ -22,6 +22,12 @@
 }
 .sidebarOptionHash{
     padding: 10px;
-    padding-right: 18px;
+    padding-right: 14px;
+    padding-left: 12px;
     font-size: 15px !important;
+}
+.sidebar > hr{
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    border-bottom: 1px solid var(--hoverBackground);
 }
