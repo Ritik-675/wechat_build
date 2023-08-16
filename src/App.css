@@ -3,3 +3,8 @@ body{
     --searchBackcolor: #6a6565;
     --hoverBackground: #6d6a6a;
 }
+
+.app__body{
+    display: flex;
+    height: 100vh;
+}

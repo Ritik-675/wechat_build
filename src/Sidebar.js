@@ -1,4 +1,4 @@
-// import './Sidebar.js'
+import './Sidebar.css'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import CreateIcon from '@mui/icons-material/Create';
 import SidebarOption from './SidebarOption';
@@ -56,7 +56,7 @@ function Sidebar() {
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="Channels"/>
       <hr />
-      <SidebarOption Icon={AddIcon} title="Add Channel"/>
+      <SidebarOption Icon={AddIcon} title="Add Channel" addChannelOption={'Add Channel'}/>
 
       {/* {Connect to db and list all the channels} */}
       {/* {Sidebar Option...} */}
