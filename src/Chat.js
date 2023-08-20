@@ -7,14 +7,22 @@ import db from './firebase';
 
 function Chat() {
     const { roomId } = useParams();
+    console.log(roomId);
     const [roomDetails, setRoomDetails] = useState(null);
+    console.log(roomDetails);
     const [roomMessages, setRoomMessages] = useState(null);
+    console.log(roomMessages);
 
     useEffect(() => {
+        console.log("Inside USE_EFFECT");
         if (roomId) {
+            console.log("Inside IF Clause");
             db.collection('rooms').doc(roomId).onSnapshot(snapshot => {
                 try {
-                    if (snapshot.exists) {
+                    console.log("Inside DB");
+                    console.log(snapshot.data());
+                    if (snapshot) {
+                        console.log("Inside Snapshot");
                         setRoomDetails(snapshot.data());
                     } else {
                         console.log(roomId ,"Room not found");
