@@ -4,8 +4,11 @@
     align-items: center;
     font-size: 12px;
     padding-left: 2px;
+    /* padding-right: 2px; */
+    padding-right: 4px;
+    margin-right: 2px;
     cursor: pointer;
-    margin: 4px;
+    /* margin: 3px 0; */
 }
 
 .sidebarOption:hover{
@@ -15,7 +18,13 @@
 
 
 .sidebarOption__icon{
-    margin: 2px;
+    /* padding: 10px; */
+    /* padding: 10px; */
+    /* padding-right: 5px; */
+    margin-right: 4px;
+    padding-left: 12px; 
+    font-size: 30px !important;
+    /* margin: 2px; */
 }
 
 .sidebarOptionChannel{
@@ -23,8 +32,8 @@
 }
 .sidebarOptionHash{
     padding: 10px;
-    padding-right: 14px;
-    padding-left: 12px;
+    padding-right: 4px;
+    padding-left: 16px;
     font-size: 15px !important;
 }
 .sidebar > hr{
