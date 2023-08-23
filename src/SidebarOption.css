@@ -5,6 +5,7 @@
     font-size: 12px;
     padding-left: 2px;
     cursor: pointer;
+    margin: 4px;
 }
 
 .sidebarOption:hover{
@@ -12,9 +13,9 @@
     opacity: 0.9;
 }
 
+
 .sidebarOption__icon{
-    padding: 10px;
-    font-size: 15px !important;
+    margin: 2px;
 }
 
 .sidebarOptionChannel{
