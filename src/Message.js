@@ -18,7 +18,7 @@ function Message({ message, timestamp, userimage,username }) {
           </span>
         </h4>
         <p>{message}</p>
-        <h4>{username}</h4>
+        {/* <h4>{username}</h4> */}
         
           
       </div>

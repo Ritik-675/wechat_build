@@ -6,16 +6,18 @@ import Avatar from '@mui/material/Avatar';
 
 // import { CSSProperties } from 'react';
 import './Header.css'
-
+import { useStateValue } from './StateProvider';
 
 
 function Header() {
+  const [{user}] = useStateValue();
   return (
     <div className='header'>
         <div className='header__left'>
             {/* <Avatar className='header__avatar' alt='RITIKKKK' src=''> */}
             {/* <Avatar src="/broken-image.jpg" /> */}
-            <Avatar alt="Remy Sharp" src="" />
+            <Avatar alt={user?.displayName} 
+            src={user?.photoURL} />
           <AccessTimeIcon />
         {/* </Avatar> */}
         </div>

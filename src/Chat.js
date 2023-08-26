@@ -12,12 +12,14 @@ import {
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Message from "./Message";
+import ChatInput from "./ChatInput";
 
 function Chat() {
   const { roomId } = useParams();
-  const [roomDetails, setRoomDetails] = useState(null);
+  const [roomDetails, setRoomDetails] = useState();
   const [roomMessages, setRoomMessages] = useState([]);
-
+  let temp, temp1;
+  console.log("DFFF",roomId);
   useEffect(() => {
     if (roomId) {
       const roomQuery = query(
@@ -30,11 +32,14 @@ function Chat() {
         });
       });
       
-      const roomsRef = collection(db, "rooms");
+      const roomsRef = query(collection(db, "rooms"),where("name", "==", roomId));
       const unsubscribeRooms = onSnapshot(roomsRef, (snapshot) => {
         const rooms = snapshot.docs.map((doc) => {
-          const roomId = doc.id;
-          const messagesRef = collection(db, "rooms", roomId, "messages");
+          const roomDocId = doc.id;
+          temp = roomDocId;
+          // console.log("Doc ID",d);
+          console.log("Printing Doc ID: ",temp);
+          const messagesRef = collection(db, "rooms", roomDocId, "messages");
           const messagesQuery = query(
             messagesRef,
             orderBy("timestamp", "desc")
@@ -58,9 +63,10 @@ function Chat() {
     }
 }, [roomId]);
 
-console.log(roomDetails);
-console.log(roomMessages);
-console.log(roomMessages.id);
+console.log("Room name: ",roomId);
+console.log("Room Details: ",roomDetails);
+console.log("Room Messages: ",roomMessages);
+// console.log(roomMessages.id);
   return (
     <div className="chat">
       {/* <h2>You are in the {roomId} room </h2> */}
@@ -91,6 +97,7 @@ console.log(roomMessages.id);
           />
         ))}
       </div>
+      <ChatInput channelName={roomDetails?.name} channelId={temp} user={roomDetails?.username}/>
     </div>
   );
 }

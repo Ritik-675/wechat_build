@@ -5,20 +5,21 @@ import Chat from './Chat'
 import Login from './login';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import { useState } from 'react';
+import { useStateValue } from './StateProvider';
 
 function App() {
   console.log('Rendering App component');
-  const [user, setUser] = useState(null);
+  const [{user},dispatch] = useStateValue();
   // console.log(user);
   return (
     <div className="App">
       <Router>
         {/* {header} */}
-        {/* {!user ? (
+        {!user ? (
           // <h1>dhd</h1>
-          <Login />
+          <Login/>
         ) : (
-          <> */}
+          <>
             <Header />
 
             <div className='app__body'>
@@ -39,8 +40,8 @@ function App() {
               </Switch>
 
             </div>
-          {/* </>
-        )} */}
+          </>
+        )}
       </Router>
     </div>
   );
